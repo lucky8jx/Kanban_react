@@ -1,10 +1,12 @@
 import React, { Component, PropTypes } from 'react';
 import List from './List';
+import { Link } from 'react-router';
 
 class KanbanBoard extends Component {
   render() {
     return (
       <div className="app">
+        <Link to="/new" className="float-button">+</Link>
         <List id='todo' title='To Do' cards={
           this.props.cards.filter((card) => card.status === "todo")
         } taskCallbacks={this.props.taskCallbacks} />
